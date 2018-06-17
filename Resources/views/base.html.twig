@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog app</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        table#t01 {
+            width: 100%;
+            background-color: #f1f1c1;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <p style="text-align:center;font-family:arial;">
+            <strong>
+            Welcome to blog
+            {% if user is defined %}<p style="text-align: center;">  You're username is: {{user}}.</p>{% endif %}
+            </strong>
+    </p>
+    <hr>
+    <a href="/">Home-page</a> - <a href="/login">Login</a> {% if user is defined %}– <a href="/blog/add">[Add entry]</a> - <a href="/logout">[Logout]</a>{% endif %}
+    <hr>
+</header>
+{% block body %}{% endblock %}
+
+<footer>
+    <hr>
+    <p style="text-align:center;font-family:arial;">
+        <strong>
+            (c) 2015 - <a href="/imprint">Imprint</a>
+        </strong>
+    </p>
+</footer>
+</body>
+</html>

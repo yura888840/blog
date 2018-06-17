@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table style="width:100%">
+        <tr>
+            <td>{{ entry.date }} : {{ entry.title }}</td>
+        </tr>
+        <tr>
+            <td>{{ entry.text }}</td>
+        </tr>
+        <tr>
+            <td>Author: {{ entry.author }}</td>
+        </tr>
+        <tr>
+            <td><a href="/blog/detail/{{ entry.id }}">More >>></a></td>
+        </tr>
+    </table>
+    <br>
+    <u>{{ comments_count }} comment yet</u>
+    <br>
+    <ul>
+    {% for item in comments %}
+        <li>{{ item.author }}({{ item.url }}) said: ({{ item.date }})
+            <br>
+            {{ item.text }}
+        </li>
+    {% endfor %}
+    </ul>
+    <br>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input name="name"></td>
+            </tr>
+            <tr>
+                <td>Mail (optional)</td>
+                <td><input name="mail"></td>
+            </tr>
+            <tr>
+                <td>URL (optional)</td>
+                <td><input name="url"></td>
+            </tr>
+            <tr>
+                <td>remark</td>
+                <td><textarea name="remark"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="Leave comment">
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ msg }}
+    <form method="post">
+        <table>
+            <tr>
+                <td>login</td>
+                <td><input name="login"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input name="password" type="password"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}

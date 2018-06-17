@@ -1,0 +1,14 @@
+{
+  "name": "Blog",
+  "license": "proprietary",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Blog\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "twig/twig": "^2.0"
+  }
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <form method="post">
+        <table>
+            <tr>
+                <td>Title</td>
+                <td><input name="name"></td>
+            </tr>
+            <tr>
+                <td>Text</td>
+                <td><textarea name="remark" rows="15" cols="40"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}

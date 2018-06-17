@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% for item in entries %}
+    <table style="width:100%">
+        <tr>
+            <td>{{ item.date }} : {{ item.title }}</td>
+        </tr>
+        <tr>
+            <td>{{ item.text }}</td>
+        </tr>
+        <tr>
+            <td>Author: {{ item.author }}</td>
+        </tr>
+        <tr>
+            <td><a href="/blog/detail/{{ item.id }}">More >>></a></td>
+        </tr>
+    </table>
+    <br>
+    {% endfor %}
+{% endblock %}
